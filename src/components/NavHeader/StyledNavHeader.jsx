@@ -91,12 +91,10 @@ export const NavHeaderStyled = styled.div`
     }
 
     .MobileNotShow {
-      visibility: collapse;
       display: none;
     }
 
     .MobileOptions {
-      /* visibility: visible; */
       position: absolute;
       background-color: #f3f2f1;
       left: 50%;
@@ -236,12 +234,10 @@ export const NavHeaderStyled = styled.div`
     }
 
     .MobileNotShow {
-      visibility: collapse;
       display: none;
     }
 
     .MobileOptions {
-      /* visibility: visible; */
       position: absolute;
       background-color: #f3f2f1;
       left: 50%;
@@ -376,6 +372,10 @@ export const NavHeaderStyled = styled.div`
       }
     }
 
+    .MobileNotShow {
+      display: none;
+    }
+
     .MobileOptions {
       display: none;
     }
@@ -500,6 +500,11 @@ export const NavHeaderStyled = styled.div`
         }
       }
     }
+
+    .MobileNotShow {
+      display: none;
+    }
+
     .MobileOptions {
       display: none;
     }
@@ -626,6 +631,10 @@ export const NavHeaderStyled = styled.div`
     }
 
     .MobileOptions {
+      display: none;
+    }
+
+    .MobileNotShow {
       display: none;
     }
 
