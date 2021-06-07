@@ -32,19 +32,19 @@ export const NavHeaderStyled = styled.div`
   ul {
     list-style-type: none;
     /* display: block; */
-    padding: 0.5rem 0.5rem;
+    /* padding: 0.5rem 0.5rem;
     margin-block-end: 1em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     padding-inline-start: 40px;
-    margin: 0;
+    margin: 0; */
 
-    li {
+    /* li {
       text-align: -webkit-match-parent;
       display: list-item;
       padding: 0 1.5rem;
       width: 100%;
-    }
+    } */
   }
 
   @media only screen and (max-width: 600px) {

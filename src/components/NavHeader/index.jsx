@@ -157,32 +157,35 @@ export const NavHeader = (props) => {
           </div>
         </nav>
         {/* {showMobileOption && ( */}
-        <ul className={showMobileOption ? "MobileOptions" : "MobileNotShow"}>
-          <li key="1" id="home" onClick={onSetSelectedLink}>
-            <Link to="/home" className="Option">
-              HOME
-            </Link>
-            <hr />
-          </li>
-          <li key="2" id="services" onClick={onSetSelectedLink}>
-            <Link to="/services" className="Option">
-              SERVICES
-            </Link>
-            <hr />
-          </li>
-          <li key="3" id="gallery" onClick={onSetSelectedLink}>
-            <Link to="/gallery" className="Option">
-              GALLERY
-            </Link>
-            <hr />
-          </li>
-          <li key="4" id="contact" onClick={onSetSelectedLink}>
-            <Link to="/contact" className="Option">
-              CONTACT
-            </Link>
-            <hr />
-          </li>
-        </ul>
+        <div className={showMobileOption ? "MobileOptions" : "MobileNotShow"}>
+          <ul className="">
+            <li key="1" id="home" onClick={onSetSelectedLink}>
+              <Link to="/home" className="Option">
+                HOME
+              </Link>
+              <hr />
+            </li>
+            <li key="2" id="services" onClick={onSetSelectedLink}>
+              <Link to="/services" className="Option">
+                SERVICES
+              </Link>
+              <hr />
+            </li>
+            <li key="3" id="gallery" onClick={onSetSelectedLink}>
+              <Link to="/gallery" className="Option">
+                GALLERY
+              </Link>
+              <hr />
+            </li>
+            <li key="4" id="contact" onClick={onSetSelectedLink}>
+              <Link to="/contact" className="Option">
+                CONTACT
+              </Link>
+              <hr />
+            </li>
+          </ul>
+        </div>
+
         {/* )} */}
         <Switch>
           <Route exact path="/">
