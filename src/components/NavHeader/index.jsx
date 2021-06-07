@@ -157,7 +157,12 @@ export const NavHeader = (props) => {
           </div>
         </nav>
         {/* {showMobileOption && ( */}
-        <div className={showMobileOption ? "MobileOptions" : "MobileNotShow"}>
+        <div
+          // style={{ visibility: showMobileOption ? "visible" : "hidden" }}
+          className={
+            showMobileOption === true ? "MobileOptions" : "MobileNotShow"
+          }
+        >
           <ul className="">
             <li key="1" id="home" onClick={onSetSelectedLink}>
               <Link to="/home" className="Option">
