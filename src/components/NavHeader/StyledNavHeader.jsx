@@ -91,12 +91,11 @@ export const NavHeaderStyled = styled.div`
     }
 
     .MobileNotShow {
-      /* display: none; */
-      visibility: hidden;
+      visibility: collapse;
     }
 
     .MobileOptions {
-      visibility: visible;
+      visibility: collapse;
       position: absolute;
       background-color: #f3f2f1;
       left: 50%;
@@ -236,12 +235,11 @@ export const NavHeaderStyled = styled.div`
     }
 
     .MobileNotShow {
-      /* display: none; */
-      visibility: hidden;
+      visibility: collapse;
     }
 
     .MobileOptions {
-      visibility: visible;
+      visibility: collapse;
       position: absolute;
       background-color: #f3f2f1;
       left: 50%;
