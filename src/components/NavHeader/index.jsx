@@ -156,45 +156,38 @@ export const NavHeader = (props) => {
             </Button>
           </div>
         </nav>
-        {/* {showMobileOption && ( */}
-        {/* <div
-          className={
-            showMobileOption === true ? "MobileOptions" : "MobileNotShow"
-          }
-        > */}
-        <ul
-          className={
-            showMobileOption === true ? "MobileOptions" : "MobileNotShow"
-          }
-        >
-          <li key="1" id="home" onClick={onSetSelectedLink}>
-            <Link to="/home" className="Option">
-              HOME
-            </Link>
-            <hr />
-          </li>
-          <li key="2" id="services" onClick={onSetSelectedLink}>
-            <Link to="/services" className="Option">
-              SERVICES
-            </Link>
-            <hr />
-          </li>
-          <li key="3" id="gallery" onClick={onSetSelectedLink}>
-            <Link to="/gallery" className="Option">
-              GALLERY
-            </Link>
-            <hr />
-          </li>
-          <li key="4" id="contact" onClick={onSetSelectedLink}>
-            <Link to="/contact" className="Option">
-              CONTACT
-            </Link>
-            <hr />
-          </li>
-        </ul>
-        {/* </div> */}
-
-        {/* )} */}
+        {showMobileOption === true && (
+          <ul
+            className={
+              showMobileOption === true ? "MobileOptions" : "MobileNotShow"
+            }
+          >
+            <li key="1" id="home" onClick={onSetSelectedLink}>
+              <Link to="/home" className="Option">
+                HOME
+              </Link>
+              <hr />
+            </li>
+            <li key="2" id="services" onClick={onSetSelectedLink}>
+              <Link to="/services" className="Option">
+                SERVICES
+              </Link>
+              <hr />
+            </li>
+            <li key="3" id="gallery" onClick={onSetSelectedLink}>
+              <Link to="/gallery" className="Option">
+                GALLERY
+              </Link>
+              <hr />
+            </li>
+            <li key="4" id="contact" onClick={onSetSelectedLink}>
+              <Link to="/contact" className="Option">
+                CONTACT
+              </Link>
+              <hr />
+            </li>
+          </ul>
+        )}
         <Switch>
           <Route exact path="/">
             <HomeScreenComponent />
