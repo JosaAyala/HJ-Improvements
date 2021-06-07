@@ -31,7 +31,7 @@ export const NavHeaderStyled = styled.div`
 
   ul {
     list-style-type: none;
-    /* display: block; */
+    display: block;
     padding: 0.5rem 0.5rem;
     margin-block-end: 1em;
     margin-inline-start: 0px;
