@@ -150,11 +150,8 @@ export const ServicesScreenStyled = styled.div`
             padding-left: 20px;
             background-color: #014f86;
             display: grid;
-            grid-template-columns: 15% 85%;
+            grid-template-columns: 10% 85%;
             column-gap: 20px;
-            justify-content: center;
-            align-content: center;
-            align-items: center;
             filter: drop-shadow(0 4mm 3mm black);
             z-index: 100;
             position: relative;
@@ -163,6 +160,12 @@ export const ServicesScreenStyled = styled.div`
               display: grid;
               font-weight: bold;
               font-size: 16pt;
+              text-align: left;
+            }
+
+            svg {
+              width: 28px;
+              height: 28px;
             }
 
             .ItemSvg {
@@ -179,6 +182,7 @@ export const ServicesScreenStyled = styled.div`
             margin-right: 10px;
             font-size: 10pt;
             color: black;
+            text-align: left;
           }
         }
       }
@@ -298,6 +302,12 @@ export const ServicesScreenStyled = styled.div`
               display: grid;
               font-weight: bold;
               font-size: 16pt;
+              text-align: left;
+            }
+
+            svg {
+              width: 32px;
+              height: 32px;
             }
 
             .ItemSvg {
@@ -314,6 +324,7 @@ export const ServicesScreenStyled = styled.div`
             margin-right: 10px;
             font-size: 10pt;
             color: black;
+            text-align: left;
           }
         }
       }
@@ -434,6 +445,12 @@ export const ServicesScreenStyled = styled.div`
               display: grid;
               font-weight: bold;
               font-size: 16pt;
+              text-align: left;
+            }
+
+            svg {
+              width: 36px;
+              height: 36px;
             }
 
             .ItemSvg {
@@ -450,6 +467,7 @@ export const ServicesScreenStyled = styled.div`
             margin-right: 10px;
             font-size: 10pt;
             color: black;
+            text-align: left;
           }
         }
       }
@@ -562,9 +580,9 @@ export const ServicesScreenStyled = styled.div`
             display: grid;
             grid-template-columns: auto 1fr;
             column-gap: 20px;
-            justify-content: center;
+            /* justify-content: center;
             align-content: center;
-            align-items: center;
+            align-items: center; */
             /* border-radius: 20px; */
             filter: drop-shadow(0 4mm 3mm black);
             z-index: 100;
@@ -574,6 +592,12 @@ export const ServicesScreenStyled = styled.div`
               display: grid;
               font-weight: bold;
               font-size: 16pt;
+              text-align: left;
+            }
+
+            svg {
+              width: 36px;
+              height: 36px;
             }
 
             .ItemSvg {
@@ -590,6 +614,7 @@ export const ServicesScreenStyled = styled.div`
             margin-right: 10px;
             font-size: 10pt;
             color: black;
+            text-align: left;
           }
         }
       }
@@ -699,10 +724,6 @@ export const ServicesScreenStyled = styled.div`
             display: grid;
             grid-template-columns: auto 1fr;
             column-gap: 20px;
-            justify-content: center;
-            align-content: center;
-            align-items: center;
-            /* border-radius: 20px; */
             filter: drop-shadow(0 4mm 3mm black);
             z-index: 100;
             position: relative;
@@ -710,6 +731,7 @@ export const ServicesScreenStyled = styled.div`
             h3 {
               display: grid;
               font-weight: bold;
+              text-align: left;
             }
 
             .ItemSvg {
@@ -724,6 +746,7 @@ export const ServicesScreenStyled = styled.div`
             margin-right: 10px;
             font-size: 12pt;
             color: black;
+            text-align: left;
           }
         }
       }

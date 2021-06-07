@@ -86,7 +86,7 @@ export const NavHeader = (props) => {
           <div className="">
             <div className="ItemCurrentNav">{selectedMobileOption}</div>
             <ul className="ItemsNav">
-              <li id="home" onClick={onSetSelectedLink}>
+              <li key="1" id="home" onClick={onSetSelectedLink}>
                 <Link
                   to="/home"
                   className={
@@ -98,7 +98,7 @@ export const NavHeader = (props) => {
                   Home
                 </Link>
               </li>
-              <li id="services" onClick={onSetSelectedLink}>
+              <li key="2" id="services" onClick={onSetSelectedLink}>
                 <Link
                   to="/services"
                   className={
@@ -110,7 +110,7 @@ export const NavHeader = (props) => {
                   Services
                 </Link>
               </li>
-              <li id="gallery" onClick={onSetSelectedLink}>
+              <li key="3" id="gallery" onClick={onSetSelectedLink}>
                 <Link
                   to="/gallery"
                   className={
@@ -122,7 +122,7 @@ export const NavHeader = (props) => {
                   Gallery
                 </Link>
               </li>
-              <li id="contact" onClick={onSetSelectedLink}>
+              <li key="4" id="contact" onClick={onSetSelectedLink}>
                 <Link
                   to="/contact"
                   className={
@@ -148,7 +148,7 @@ export const NavHeader = (props) => {
                 width="32"
                 height="32"
                 fill="#0078d4"
-                class="bi bi-menu-down"
+                className="bi bi-menu-down"
                 viewBox="0 0 16 16"
               >
                 <path d="M4 2v2H2V2h2zm1 12v-2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1zm0-5V7a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1zm0-5V2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1zm5 10v-2a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1zm0-5V7a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1zm0-5V2a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1zM9 2v2H7V2h2zm5 0v2h-2V2h2zM4 7v2H2V7h2zm5 0v2H7V7h2zm5 0h-2v2h2V7zM4 12v2H2v-2h2zm5 0v2H7v-2h2zm5 0v2h-2v-2h2zM12 1a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1h-2zm-1 6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V7zm1 4a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1h-2z" />
@@ -158,25 +158,25 @@ export const NavHeader = (props) => {
         </nav>
         {showMobileOption && (
           <ul className="MobileOptions">
-            <li id="home" onClick={onSetSelectedLink}>
+            <li key="1" id="home" onClick={onSetSelectedLink}>
               <Link to="/home" className="Option">
                 HOME
               </Link>
               <hr />
             </li>
-            <li id="services" onClick={onSetSelectedLink}>
+            <li key="2" id="services" onClick={onSetSelectedLink}>
               <Link to="/services" className="Option">
                 SERVICES
               </Link>
               <hr />
             </li>
-            <li id="gallery" onClick={onSetSelectedLink}>
+            <li key="3" id="gallery" onClick={onSetSelectedLink}>
               <Link to="/gallery" className="Option">
                 GALLERY
               </Link>
               <hr />
             </li>
-            <li id="contact" onClick={onSetSelectedLink}>
+            <li key="4" id="contact" onClick={onSetSelectedLink}>
               <Link to="/contact" className="Option">
                 CONTACT
               </Link>

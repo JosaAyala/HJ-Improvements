@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { FooterComponent } from "./components/Footer/Footer";
 import MainScreenComponent from "./components/MainScreen";

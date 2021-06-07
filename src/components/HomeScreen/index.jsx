@@ -1,7 +1,5 @@
 import React from "react";
 import { HomeScreenStyled } from "./StyledHomeScreen";
-import HomeViewPic from "./../../assets/HomeViewPic.jpeg";
-import { Card } from "react-bootstrap";
 import { ValueCard } from "./CardValue";
 import {
   DISCIPLINE_VALUE,

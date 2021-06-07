@@ -6,9 +6,6 @@ import iconPhone from "./../../assets/iconPhone.png";
 import iconLocation from "./../../assets/iconLocation.png";
 
 export class ContactScreenComponent extends React.Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     return (
       <ContactScreenStyled>
