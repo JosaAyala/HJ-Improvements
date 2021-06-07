@@ -158,7 +158,6 @@ export const NavHeader = (props) => {
         </nav>
         {/* {showMobileOption && ( */}
         <div
-          // style={{ visibility: showMobileOption ? "visible" : "hidden" }}
           className={
             showMobileOption === true ? "MobileOptions" : "MobileNotShow"
           }
