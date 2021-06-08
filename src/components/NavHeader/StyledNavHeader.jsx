@@ -81,13 +81,13 @@ export const NavHeaderStyled = styled.div`
       width: 100%;
 
       display: grid;
-      grid-template-columns: 155px calc(97% - 235px) 80px;
+      grid-template-columns: 125px calc(97% - 210px) 80px;
       column-gap: 5px;
 
       .ImgNav {
         filter: drop-shadow(0 0 3px #b3b0ad);
-        width: 140px;
-        height: 80px;
+        width: 100px;
+        height: 60px;
         display: grid;
         justify-content: center;
         justify-items: center;
@@ -496,7 +496,7 @@ export const NavHeaderStyled = styled.div`
       width: 100%;
 
       display: grid;
-      grid-template-columns: 300px calc(97% - 385px) 80px;
+      grid-template-columns: 200px calc(97% - 210px);
       column-gap: 15px;
 
       .ImgNav {

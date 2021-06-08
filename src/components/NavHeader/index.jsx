@@ -84,9 +84,9 @@ export const NavHeader = (props) => {
 
       <Router>
         <nav className="NavBarContainer">
-          <a href="/home">
+          <Link to="/">
             <img className="ImgNav" src={logo02} alt="" />
-          </a>
+          </Link>
           <div className="MenuContainer">
             <ul className="MenuMobileSelectedOption">
               <li className="SelectedOption">{selectedMobileOption}</li>
@@ -146,11 +146,9 @@ export const NavHeader = (props) => {
             </ul>
           </div>
           <span className="MenuHamburger" onClick={onClickShowMenu}>
-            {/* <div className="MenuHamburger"> */}
             <div className="Bar"></div>
             <div className="Bar"></div>
             <div className="Bar"></div>
-            {/* </div> */}
           </span>
         </nav>
         <div
