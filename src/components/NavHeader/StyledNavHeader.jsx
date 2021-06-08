@@ -2,6 +2,10 @@ import styled from "styled-components";
 import HeaderMain06 from "./../../assets/HaederMain06.jpg";
 
 export const NavHeaderStyled = styled.div`
+  nav a {
+    text-decoration: none;
+    color: black;
+  }
   @keyframes MobileMenu {
     0% {
       background: #b3b0ad;
@@ -24,30 +28,11 @@ export const NavHeaderStyled = styled.div`
       height: 250px;
     }
   }
-  nav a {
-    text-decoration: none;
-    color: black;
-  }
-
-  ul {
-    list-style-type: none;
-    display: block;
-    padding: 0.5rem 0.5rem;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    padding-inline-start: 40px;
-    margin: 0;
-
-    li {
-      text-align: -webkit-match-parent;
-      display: list-item;
-      padding: 0 1.5rem;
-      width: 100%;
-    }
-  }
-
   @media only screen and (max-width: 600px) {
+    ul a {
+      text-decoration: none;
+      color: black;
+    }
     .DefaultBar {
       height: 120px;
       display: block;
@@ -90,108 +75,172 @@ export const NavHeaderStyled = styled.div`
       }
     }
 
-    .MobileNotShow {
-      display: none;
-    }
-
-    .MobileOptions {
-      position: absolute;
-      background-color: #f3f2f1;
-      left: 50%;
-      overflow: hidden;
-      top: 100%auto;
-      z-index: 9000;
-      width: 98%;
-      transform: translateX(-50%);
-      transition: height 1s;
-      height: 250px;
-      animation-name: MobileMenu;
-      animation-duration: 0.5s;
-      -webkit-transition: height 1s;
-      -moz-transition: height 1s;
-
-      .Option {
-        color: #484644;
-        font-size: 14pt;
-        font-weight: normal;
-        filter: drop-shadow(0 0 3px black);
-      }
-
-      .Option:hover {
-        border-bottom: solid 4px #ffc107;
-        color: black;
-        font-weight: bold;
-        text-transform: uppercase;
-        text-shadow: 2px 2px 4px hsl(0deg 0% 0% / 25%);
-        transition: 0.1s ease-in color;
-      }
-    }
-
-    .NavClass {
+    .NavBarContainer {
       margin-top: 120px;
-      width: 100%;
-      display: grid;
-      grid-template-columns: 115px calc(95% - 195px) 80px;
-      column-gap: 15px;
       background-color: #f3f2f1;
+      width: 100%;
+
+      display: grid;
+      grid-template-columns: 155px calc(97% - 235px) 80px;
+      column-gap: 5px;
 
       .ImgNav {
         filter: drop-shadow(0 0 3px #b3b0ad);
-        width: 100px;
-        height: 60px;
-        display: flex;
+        width: 140px;
+        height: 80px;
+        display: grid;
         justify-content: center;
         justify-items: center;
         align-content: center;
         align-items: center;
-        margin-left: 10px;
-        margin-right: auto;
-      }
-
-      .MenuButton {
-        display: block;
-        justify-content: center;
-        justify-items: center;
-        align-content: center;
-        align-items: center;
-        padding: 20px;
-        background-color: #f3f2f1;
-      }
-
-      a {
-        font-weight: bold;
-      }
-
-      .ItemsNav {
-        display: none;
-      }
-
-      .ItemCurrentNav {
-        display: flex;
-        justify-content: center;
-        justify-items: center;
-        align-content: center;
-        align-items: center;
-        padding: 20px;
-        text-align: center;
-        width: min-content;
         margin: auto;
-        color: #ffc107;
-        font-weight: bold;
-        text-transform: uppercase;
-        text-shadow: 2px 2px 4px hsl(0deg 0% 0% / 25%);
-        transition: 0.1s ease-in color;
-        font-size: 16pt;
+      }
+
+      .MenuContainer {
+        display: grid;
+        font-size: 12pt;
+
+        ul {
+          list-style-type: none;
+          margin: 0px;
+          padding: 0px;
+          color: black;
+          text-decoration: none;
+        }
+
+        .MenuMobileSelectedOption {
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-content: center;
+          align-items: center;
+          justify-items: center;
+          justify-content: center;
+
+          .SelectedOption {
+            text-align: center;
+            color: #ffc107;
+            border-bottom: solid 3px #bebbb8;
+            border-top: solid 3px #bebbb8;
+            font-weight: 900;
+            padding-top: 3px;
+            padding-bottom: 3px;
+            padding-left: 10px;
+            padding-right: 10px;
+            transition: font-weight 0.2s, font-size 0.2s, border-top 0.2s,
+              border-bottom 0.2s;
+          }
+
+          .SelectedOption:hover {
+            color: #8a8886;
+            border-bottom: solid 5px #ffc107;
+            border-top: solid 5px #ffc107;
+            font-weight: 900;
+            font-size: 12pt;
+          }
+        }
+        .ListMenu {
+          display: none;
+        }
+      }
+
+      .MenuHamburger {
+        display: flex;
+        flex-direction: column;
+        row-gap: 5px;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+
+        .Bar {
+          width: 30px;
+          height: 3px;
+          background: #0078d4;
+        }
+
+        .Bar:hover {
+          background: #484644;
+        }
+      }
+
+      .MenuHamburger:hover {
+      }
+    }
+
+    .MobileOptionsNotShow {
+      display: none;
+    }
+
+    .MenuMobileOptions {
+      display: grid;
+      font-size: 12pt;
+      height: 200px;
+      transition: height 02s;
+      animation-name: MobileMenu;
+      animation-duration: 0.2s;
+      -webkit-transition: height 0.2s;
+      -moz-transition: height 0.2s;
+
+      ul {
+        list-style-type: none;
+        margin: 0px;
+        padding: 0px;
+        color: black;
+        text-decoration: none;
+      }
+      .ListMenu {
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        justify-content: space-around;
+        align-content: center;
+        align-items: center;
+        justify-items: center;
+
+        .ListItem {
+          font-weight: 700;
+          padding-left: 10px;
+          padding-right: 10px;
+          transition: font-weight 0.2s, font-size 0.2s, border-top 0.2s,
+            border-bottom 0.2s;
+        }
+
+        .ListItem:hover {
+          border-bottom: solid 5px #ffc107;
+          border-top: solid 5px #ffc107;
+          font-weight: 900;
+          font-size: 12pt;
+        }
+
+        .ListItemSelected {
+          color: #ffc107;
+          border-bottom: solid 3px #bebbb8;
+          border-top: solid 3px #bebbb8;
+          font-weight: 900;
+          padding-top: 3px;
+          padding-bottom: 3px;
+          padding-left: 10px;
+          padding-right: 10px;
+          transition: font-weight 0.2s, font-size 0.2s, border-top 0.2s,
+            border-bottom 0.2s;
+        }
+
+        .ListItemSelected:hover {
+          color: #8a8886;
+          border-bottom: solid 5px #ffc107;
+          border-top: solid 5px #ffc107;
+          font-weight: 900;
+          font-size: 12pt;
+        }
       }
     }
   }
 
   @media only screen and (min-width: 600px) {
-    ul {
-      list-style-type: none;
-      list-style-position: inside;
+    ul a {
+      text-decoration: none;
+      color: black;
     }
-
     .DefaultBar {
       height: 120px;
       display: block;
@@ -233,98 +282,159 @@ export const NavHeaderStyled = styled.div`
       }
     }
 
-    .MobileNotShow {
+    .MobileOptionsNotShow {
       display: none;
     }
 
-    .MobileOptions {
-      position: absolute;
-      background-color: #f3f2f1;
-      left: 50%;
-      overflow: hidden;
-      top: 100%auto;
-      z-index: 9000;
-      width: 100%;
-      transform: translateX(-50%);
-      transition: height 1s;
-      height: 250px;
+    .MenuMobileOptions {
+      display: grid;
+      font-size: 16pt;
+      height: 200px;
+      transition: height 02s;
       animation-name: MobileMenu;
-      animation-duration: 0.5s;
-      -webkit-transition: height 1s;
-      -moz-transition: height 1s;
+      animation-duration: 0.2s;
+      -webkit-transition: height 0.2s;
+      -moz-transition: height 0.2s;
 
-      .Option {
-        color: #484644;
-        font-size: 14pt;
-        font-weight: normal;
-        filter: drop-shadow(0 0 3px black);
-      }
-
-      .Option:hover {
-        border-bottom: solid 4px #ffc107;
+      ul {
+        list-style-type: none;
+        margin: 0px;
+        padding: 0px;
         color: black;
-        font-weight: bold;
-        text-transform: uppercase;
-        text-shadow: 2px 2px 4px hsl(0deg 0% 0% / 25%);
-        transition: 0.1s ease-in color;
+        text-decoration: none;
+      }
+      .ListMenu {
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        justify-content: space-around;
+        align-content: center;
+        align-items: center;
+        justify-items: center;
+
+        .ListItem {
+          font-weight: 700;
+          padding-left: 10px;
+          padding-right: 10px;
+          transition: font-weight 0.2s, font-size 0.2s, border-top 0.2s,
+            border-bottom 0.2s;
+        }
+
+        .ListItem:hover {
+          border-bottom: solid 5px #ffc107;
+          border-top: solid 5px #ffc107;
+          font-weight: 900;
+          font-size: 18pt;
+        }
+
+        .ListItemSelected {
+          color: #ffc107;
+          border-bottom: solid 3px #bebbb8;
+          border-top: solid 3px #bebbb8;
+          font-weight: 900;
+          padding-top: 3px;
+          padding-bottom: 3px;
+          padding-left: 10px;
+          padding-right: 10px;
+          transition: font-weight 0.2s, font-size 0.2s, border-top 0.2s,
+            border-bottom 0.2s;
+        }
+
+        .ListItemSelected:hover {
+          color: #8a8886;
+          border-bottom: solid 5px #ffc107;
+          border-top: solid 5px #ffc107;
+          font-weight: 900;
+          font-size: 18pt;
+        }
       }
     }
 
-    .NavClass {
+    .NavBarContainer {
       margin-top: 120px;
-      width: 100%;
-      display: grid;
-      grid-template-columns: 115px calc(97% - 195px) 80px;
-      column-gap: 15px;
       background-color: #f3f2f1;
+      width: 100%;
+
+      display: grid;
+      grid-template-columns: 155px calc(97% - 235px) 80px;
+      column-gap: 15px;
 
       .ImgNav {
         filter: drop-shadow(0 0 3px #b3b0ad);
-        width: 100px;
-        height: 60px;
-        display: flex;
+        width: 140px;
+        height: 80px;
+        display: grid;
         justify-content: center;
         justify-items: center;
         align-content: center;
         align-items: center;
-        margin-left: 10px;
-        margin-right: auto;
-      }
-
-      .MenuButton {
-        display: flex;
-        justify-content: center;
-        justify-items: center;
-        align-content: center;
-        align-items: center;
-        padding: 20px;
-        background-color: #f3f2f1;
-      }
-
-      a {
-        font-weight: bold;
-      }
-
-      .ItemsNav {
-        display: none;
-      }
-
-      .ItemCurrentNav {
-        display: flex;
-        justify-content: center;
-        justify-items: center;
-        align-content: center;
-        align-items: center;
-        padding: 20px;
-        text-align: center;
-        width: min-content;
         margin: auto;
-        color: #ffc107;
-        font-weight: bold;
-        text-transform: uppercase;
-        text-shadow: 2px 2px 4px hsl(0deg 0% 0% / 25%);
-        transition: 0.1s ease-in color;
+      }
+
+      .MenuContainer {
+        display: grid;
         font-size: 16pt;
+
+        ul {
+          list-style-type: none;
+          margin: 0px;
+          padding: 0px;
+          color: black;
+          text-decoration: none;
+        }
+
+        .MenuMobileSelectedOption {
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-content: center;
+          align-items: center;
+          justify-items: center;
+          justify-content: center;
+
+          .SelectedOption {
+            text-align: center;
+            color: #ffc107;
+            border-bottom: solid 3px #bebbb8;
+            border-top: solid 3px #bebbb8;
+            font-weight: 900;
+            padding-top: 3px;
+            padding-bottom: 3px;
+            padding-left: 10px;
+            padding-right: 10px;
+            transition: font-weight 0.2s, font-size 0.2s, border-top 0.2s,
+              border-bottom 0.2s;
+          }
+
+          .SelectedOption:hover {
+            color: #8a8886;
+            border-bottom: solid 5px #ffc107;
+            border-top: solid 5px #ffc107;
+            font-weight: 900;
+            font-size: 18pt;
+          }
+        }
+        .ListMenu {
+          display: none;
+        }
+      }
+      .MenuHamburger {
+        display: flex;
+        flex-direction: column;
+        row-gap: 5px;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+
+        .Bar {
+          width: 30px;
+          height: 3px;
+          background: #0078d4;
+        }
+
+        .Bar:hover {
+          background: #484644;
+        }
       }
     }
   }
@@ -372,89 +482,98 @@ export const NavHeaderStyled = styled.div`
       }
     }
 
-    .MobileNotShow {
+    .MenuMobileOptions {
       display: none;
     }
 
-    .MobileOptions {
+    .MobileOptionsNotShow {
       display: none;
     }
-    .NavClass {
+
+    .NavBarContainer {
       margin-top: 75px;
-      width: 100%;
-      display: grid;
-      grid-template-columns: 175px calc(98% - 260px) 80px;
-      column-gap: 5px;
       background-color: #f3f2f1;
+      width: 100%;
 
-      justify-content: center;
-      align-items: center;
-      align-content: space-around;
+      display: grid;
+      grid-template-columns: 300px calc(97% - 385px) 80px;
+      column-gap: 15px;
 
       .ImgNav {
         filter: drop-shadow(0 0 3px #b3b0ad);
         width: 140px;
         height: 80px;
-        display: flex;
-        justify-content: center;
-        justify-items: center;
-        align-content: center;
-        align-items: center;
-        margin-left: 10px;
-        margin-right: auto;
-      }
-
-      .MenuButton {
-        display: none;
-      }
-
-      a {
-        font-weight: bold;
-      }
-
-      .ItemCurrentNav {
-        display: none;
-      }
-
-      .ItemsNav {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        column-gap: 10px;
-
         justify-content: center;
         justify-items: center;
         align-content: center;
         align-items: center;
+        margin: auto;
+      }
 
-        .NavItem {
-          font-size: 16pt;
+      .MenuContainer {
+        display: grid;
+        font-size: 16pt;
+
+        ul {
+          list-style-type: none;
+          margin: 0px;
+          padding: 0px;
           color: black;
-          filter: drop-shadow(0 0 8px gray);
-          width: max-content;
+          text-decoration: none;
         }
 
-        .NavItemSelected {
-          border-bottom: solid 4px #ffc107;
-          color: #ffc107;
-          font-weight: bold;
-          text-transform: uppercase;
-          text-shadow: 2px 2px 4px hsl(0deg 0% 0% / 25%);
-          transition: 0.1s ease-in color;
-          font-size: 16pt;
+        .MenuMobileSelectedOption {
+          display: none;
         }
+        .ListMenu {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+          flex-direction: row;
+          justify-content: space-around;
+          align-content: center;
+          align-items: center;
+          justify-items: center;
 
-        .NavItem:hover {
-          border-bottom: solid 4px #ffc107;
-          color: black;
-          font-weight: bold;
-          text-transform: uppercase;
-          text-shadow: 2px 2px 4px hsl(0deg 0% 0% / 25%);
-          transition: 0.1s ease-in color;
-        }
+          .ListItem {
+            font-weight: 700;
+            padding-left: 10px;
+            padding-right: 10px;
+            transition: font-weight 0.2s, font-size 0.2s, border-top 0.2s,
+              border-bottom 0.2s;
+          }
 
-        .ImgNav:hover {
-          filter: drop-shadow(0 0 2px white);
+          .ListItem:hover {
+            border-bottom: solid 5px #ffc107;
+            border-top: solid 5px #ffc107;
+            font-weight: 900;
+            font-size: 18pt;
+          }
+
+          .ListItemSelected {
+            color: #ffc107;
+            border-bottom: solid 3px #bebbb8;
+            border-top: solid 3px #bebbb8;
+            font-weight: 900;
+            padding-top: 3px;
+            padding-bottom: 3px;
+            padding-left: 10px;
+            padding-right: 10px;
+            transition: font-weight 0.2s, font-size 0.2s, border-top 0.2s,
+              border-bottom 0.2s;
+          }
+
+          .ListItemSelected:hover {
+            color: #8a8886;
+            border-bottom: solid 5px #ffc107;
+            border-top: solid 5px #ffc107;
+            font-weight: 900;
+            font-size: 18pt;
+          }
         }
+      }
+      .MenuHamburger {
+        display: none;
       }
     }
   }
@@ -501,89 +620,98 @@ export const NavHeaderStyled = styled.div`
       }
     }
 
-    .MobileNotShow {
+    .MenuMobileOptions {
       display: none;
     }
 
-    .MobileOptions {
+    .MobileOptionsNotShow {
       display: none;
     }
 
-    .NavClass {
+    .NavBarContainer {
       margin-top: 75px;
-      width: 100%;
-      display: grid;
-      grid-template-columns: 200px calc(97% - 285px) 80px;
-      column-gap: 15px;
       background-color: #f3f2f1;
-      justify-content: center;
-      align-items: center;
-      align-content: space-around;
+      width: 100%;
+
+      display: grid;
+      grid-template-columns: 300px calc(97% - 385px) 80px;
+      column-gap: 15px;
 
       .ImgNav {
         filter: drop-shadow(0 0 3px #b3b0ad);
         width: 140px;
         height: 80px;
-        display: flex;
-        justify-content: center;
-        justify-items: center;
-        align-content: center;
-        align-items: center;
-        margin-left: 10px;
-        margin-right: auto;
-      }
-
-      .MenuButton {
-        display: none;
-      }
-
-      a {
-        font-weight: bold;
-      }
-
-      .ItemCurrentNav {
-        display: none;
-      }
-
-      .ItemsNav {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        column-gap: 25px;
-
         justify-content: center;
         justify-items: center;
         align-content: center;
         align-items: center;
+        margin: auto;
+      }
 
-        .NavItem {
-          font-size: 18pt;
+      .MenuContainer {
+        display: grid;
+        font-size: 16pt;
+
+        ul {
+          list-style-type: none;
+          margin: 0px;
+          padding: 0px;
           color: black;
-          filter: drop-shadow(0 0 8px gray);
-          width: max-content;
+          text-decoration: none;
         }
 
-        .NavItemSelected {
-          border-bottom: solid 4px #ffc107;
-          color: #ffc107;
-          font-weight: bold;
-          text-transform: uppercase;
-          text-shadow: 2px 2px 4px hsl(0deg 0% 0% / 25%);
-          transition: 0.1s ease-in color;
-          font-size: 18pt;
+        .MenuMobileSelectedOption {
+          display: none;
         }
+        .ListMenu {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+          flex-direction: row;
+          justify-content: space-around;
+          align-content: center;
+          align-items: center;
+          justify-items: center;
 
-        .NavItem:hover {
-          border-bottom: solid 4px #ffc107;
-          color: black;
-          font-weight: bold;
-          text-transform: uppercase;
-          text-shadow: 2px 2px 4px hsl(0deg 0% 0% / 25%);
-          transition: 0.1s ease-in color;
-        }
+          .ListItem {
+            font-weight: 700;
+            padding-left: 10px;
+            padding-right: 10px;
+            transition: font-weight 0.2s, font-size 0.2s, border-top 0.2s,
+              border-bottom 0.2s;
+          }
 
-        .ImgNav:hover {
-          filter: drop-shadow(0 0 2px white);
+          .ListItem:hover {
+            border-bottom: solid 5px #ffc107;
+            border-top: solid 5px #ffc107;
+            font-weight: 900;
+            font-size: 18pt;
+          }
+
+          .ListItemSelected {
+            color: #ffc107;
+            border-bottom: solid 3px #bebbb8;
+            border-top: solid 3px #bebbb8;
+            font-weight: 900;
+            padding-top: 3px;
+            padding-bottom: 3px;
+            padding-left: 10px;
+            padding-right: 10px;
+            transition: font-weight 0.2s, font-size 0.2s, border-top 0.2s,
+              border-bottom 0.2s;
+          }
+
+          .ListItemSelected:hover {
+            color: #8a8886;
+            border-bottom: solid 5px #ffc107;
+            border-top: solid 5px #ffc107;
+            font-weight: 900;
+            font-size: 18pt;
+          }
         }
+      }
+      .MenuHamburger {
+        display: none;
       }
     }
   }
@@ -630,86 +758,98 @@ export const NavHeaderStyled = styled.div`
       }
     }
 
-    .MobileOptions {
+    .MenuMobileOptions {
       display: none;
     }
 
-    .MobileNotShow {
+    .MobileOptionsNotShow {
       display: none;
     }
 
-    .NavClass {
+    .NavBarContainer {
       margin-top: 75px;
-      width: 100%;
-      display: grid;
-      grid-template-columns: 200px calc(97% - 285px) 80px;
-      column-gap: 15px;
       background-color: #f3f2f1;
+      width: 100%;
+
+      display: grid;
+      grid-template-columns: 300px calc(97% - 385px) 80px;
+      column-gap: 15px;
 
       .ImgNav {
         filter: drop-shadow(0 0 3px #b3b0ad);
         width: 140px;
         height: 80px;
-        display: flex;
+        display: grid;
         justify-content: center;
         justify-items: center;
         align-content: center;
         align-items: center;
-        margin-left: 10px;
-        margin-right: auto;
+        margin: auto;
       }
 
-      .MenuButton {
-        display: none;
-      }
+      .MenuContainer {
+        display: grid;
+        font-size: 16pt;
 
-      a {
-        font-weight: bold;
-      }
-
-      .ItemCurrentNav {
-        display: none;
-      }
-
-      .ItemsNav {
-        display: flex;
-        flex-direction: row;
-        column-gap: 25px;
-
-        justify-content: flex-start;
-        align-content: space-around;
-        align-items: center;
-
-        .NavItem {
-          font-size: 18pt;
+        ul {
+          list-style-type: none;
+          margin: 0px;
+          padding: 0px;
           color: black;
-          filter: drop-shadow(0 0 8px gray);
-          padding-left: 15px;
-          padding-right: 15px;
+          text-decoration: none;
         }
 
-        .NavItemSelected {
-          border-bottom: solid 4px #ffc107;
-          color: #ffc107;
-          font-weight: bold;
-          text-transform: uppercase;
-          text-shadow: 2px 2px 4px hsl(0deg 0% 0% / 25%);
-          transition: 0.1s ease-in color;
-          font-size: 16pt;
+        .MenuMobileSelectedOption {
+          display: none;
         }
+        .ListMenu {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+          flex-direction: row;
+          justify-content: space-around;
+          align-content: center;
+          align-items: center;
+          justify-items: center;
 
-        .NavItem:hover {
-          border-bottom: solid 4px #ffc107;
-          color: black;
-          font-weight: bold;
-          text-transform: uppercase;
-          text-shadow: 2px 2px 4px hsl(0deg 0% 0% / 25%);
-          transition: 0.1s ease-in color;
-        }
+          .ListItem {
+            font-weight: 700;
+            padding-left: 10px;
+            padding-right: 10px;
+            transition: font-weight 0.2s, font-size 0.2s, border-top 0.2s,
+              border-bottom 0.2s;
+          }
 
-        .ImgNav:hover {
-          filter: drop-shadow(0 0 2px white);
+          .ListItem:hover {
+            border-bottom: solid 5px #ffc107;
+            border-top: solid 5px #ffc107;
+            font-weight: 900;
+            font-size: 18pt;
+          }
+
+          .ListItemSelected {
+            color: #ffc107;
+            border-bottom: solid 3px #bebbb8;
+            border-top: solid 3px #bebbb8;
+            font-weight: 900;
+            padding-top: 3px;
+            padding-bottom: 3px;
+            padding-left: 10px;
+            padding-right: 10px;
+            transition: font-weight 0.2s, font-size 0.2s, border-top 0.2s,
+              border-bottom 0.2s;
+          }
+
+          .ListItemSelected:hover {
+            color: #8a8886;
+            border-bottom: solid 5px #ffc107;
+            border-top: solid 5px #ffc107;
+            font-weight: 900;
+            font-size: 18pt;
+          }
         }
+      }
+      .MenuHamburger {
+        display: none;
       }
     }
   }

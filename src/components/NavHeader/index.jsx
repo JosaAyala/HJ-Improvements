@@ -22,7 +22,7 @@ export const NavHeader = (props) => {
       setselectedMobileOption(pathSplit[1].toUpperCase());
     } else {
       setSelectedLink("/home");
-      setShowMobileOption("HOME");
+      setselectedMobileOption("HOME");
     }
   }, []);
 
@@ -48,6 +48,10 @@ export const NavHeader = (props) => {
       setselectedMobileOption(pathSplit[1].toUpperCase());
       return;
     }
+  };
+
+  const onClickShowMenu = () => {
+    setShowMobileOption(!showMobileOption);
   };
 
   const linkWhatsappPhoneFirst = `https://wa.me/14438422304`;
@@ -79,115 +83,139 @@ export const NavHeader = (props) => {
       </div>
 
       <Router>
-        <nav className="NavClass">
+        <nav className="NavBarContainer">
           <a href="/home">
             <img className="ImgNav" src={logo02} alt="" />
           </a>
-          <div className="">
-            <div className="ItemCurrentNav">{selectedMobileOption}</div>
-            <ul className="ItemsNav">
-              <li key="1" id="home" onClick={onSetSelectedLink}>
+          <div className="MenuContainer">
+            <ul className="MenuMobileSelectedOption">
+              <li className="SelectedOption">{selectedMobileOption}</li>
+            </ul>
+            <ul className="ListMenu">
+              <li key="home" id="home" onClick={onSetSelectedLink}>
                 <Link
                   to="/home"
+                  onClick={onSetSelectedLink}
                   className={
                     selectedLink.includes("home")
-                      ? "NavItemSelected"
-                      : "NavItem"
+                      ? "ListItemSelected"
+                      : "ListItem"
                   }
                 >
-                  Home
+                  HOME
                 </Link>
               </li>
-              <li key="2" id="services" onClick={onSetSelectedLink}>
+              <li key="services" id="services" onClick={onSetSelectedLink}>
                 <Link
                   to="/services"
                   className={
                     selectedLink.includes("services")
-                      ? "NavItemSelected"
-                      : "NavItem"
+                      ? "ListItemSelected"
+                      : "ListItem"
                   }
                 >
-                  Services
+                  SERVICES
                 </Link>
               </li>
-              <li key="3" id="gallery" onClick={onSetSelectedLink}>
+
+              <li key="gallery" id="gallery" onClick={onSetSelectedLink}>
                 <Link
                   to="/gallery"
                   className={
                     selectedLink.includes("gallery")
-                      ? "NavItemSelected"
-                      : "NavItem"
+                      ? "ListItemSelected"
+                      : "ListItem"
                   }
                 >
-                  Gallery
+                  GALLERY
                 </Link>
               </li>
-              <li key="4" id="contact" onClick={onSetSelectedLink}>
+
+              <li key="contact" id="contact" onClick={onSetSelectedLink}>
                 <Link
                   to="/contact"
                   className={
                     selectedLink.includes("contact")
-                      ? "NavItemSelected"
-                      : "NavItem"
+                      ? "ListItemSelected"
+                      : "ListItem"
                   }
                 >
-                  Contact
+                  CONTACT
                 </Link>
               </li>
             </ul>
           </div>
-
-          <div>
-            <Button
-              variant="light"
-              className="MenuButton"
-              onClick={() => setShowMobileOption(!showMobileOption)}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="32"
-                height="32"
-                fill="#0078d4"
-                className="bi bi-menu-down"
-                viewBox="0 0 16 16"
-              >
-                <path d="M4 2v2H2V2h2zm1 12v-2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1zm0-5V7a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1zm0-5V2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1zm5 10v-2a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1zm0-5V7a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1zm0-5V2a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1zM9 2v2H7V2h2zm5 0v2h-2V2h2zM4 7v2H2V7h2zm5 0v2H7V7h2zm5 0h-2v2h2V7zM4 12v2H2v-2h2zm5 0v2H7v-2h2zm5 0v2h-2v-2h2zM12 1a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1h-2zm-1 6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V7zm1 4a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1h-2z" />
-              </svg>
-            </Button>
-          </div>
+          <span className="MenuHamburger" onClick={onClickShowMenu}>
+            {/* <div className="MenuHamburger"> */}
+            <div className="Bar"></div>
+            <div className="Bar"></div>
+            <div className="Bar"></div>
+            {/* </div> */}
+          </span>
         </nav>
-        {showMobileOption === true && (
-          <ul
-            className={
-              showMobileOption === true ? "MobileOptions" : "MobileNotShow"
-            }
-          >
-            <li key="1" id="home" onClick={onSetSelectedLink}>
-              <Link to="/home" className="Option">
+        <div
+          className={
+            showMobileOption === true
+              ? "MenuMobileOptions"
+              : "MobileOptionsNotShow"
+          }
+        >
+          <ul className="ListMenu">
+            <li key="home" id="home" onClick={onSetSelectedLink}>
+              <Link
+                to="/home"
+                onClick={onSetSelectedLink}
+                style={{ textDecoration: "none", color: "none" }}
+                className={
+                  selectedLink.includes("home")
+                    ? "ListItemSelected"
+                    : "ListItem"
+                }
+              >
                 HOME
               </Link>
-              <hr />
             </li>
-            <li key="2" id="services" onClick={onSetSelectedLink}>
-              <Link to="/services" className="Option">
+            <li key="services" id="services" onClick={onSetSelectedLink}>
+              <Link
+                to="/services"
+                className={
+                  selectedLink.includes("services")
+                    ? "ListItemSelected"
+                    : "ListItem"
+                }
+              >
                 SERVICES
               </Link>
-              <hr />
             </li>
-            <li key="3" id="gallery" onClick={onSetSelectedLink}>
-              <Link to="/gallery" className="Option">
+
+            <li key="gallery" id="gallery" onClick={onSetSelectedLink}>
+              <Link
+                to="/gallery"
+                className={
+                  selectedLink.includes("gallery")
+                    ? "ListItemSelected"
+                    : "ListItem"
+                }
+              >
                 GALLERY
               </Link>
-              <hr />
             </li>
-            <li key="4" id="contact" onClick={onSetSelectedLink}>
-              <Link to="/contact" className="Option">
+
+            <li key="contact" id="contact" onClick={onSetSelectedLink}>
+              <Link
+                to="/contact"
+                className={
+                  selectedLink.includes("contact")
+                    ? "ListItemSelected"
+                    : "ListItem"
+                }
+              >
                 CONTACT
               </Link>
-              <hr />
             </li>
           </ul>
-        )}
+        </div>
+
         <Switch>
           <Route exact path="/">
             <HomeScreenComponent />
