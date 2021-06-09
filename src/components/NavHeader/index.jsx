@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Button, Dropdown, DropdownButton } from "react-bootstrap";
+import { Dropdown, DropdownButton } from "react-bootstrap";
 import { NavHeaderStyled } from "./StyledNavHeader";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import ContactScreenComponent from "../ContactScreen";
-import HomeScreenComponent from "../HomeScreen";
-import GalleryScreenComponent from "../GalleryScreen";
-import ServicesScreenComponent from "../ServicesScreen";
+import { Link } from "react-router-dom";
 import logo02 from "./../../assets/logo02.png";
 
 export const NavHeader = (props) => {
@@ -82,93 +78,21 @@ export const NavHeader = (props) => {
         </div>
       </div>
 
-      <Router>
-        <nav className="NavBarContainer">
-          <Link to="/">
-            <img className="ImgNav" src={logo02} alt="" />
-          </Link>
-          <div className="MenuContainer">
-            <ul className="MenuMobileSelectedOption">
-              <li className="SelectedOption">{selectedMobileOption}</li>
-            </ul>
-            <ul className="ListMenu">
-              <li key="home" id="home" onClick={onSetSelectedLink}>
-                <Link
-                  href="/home"
-                  to="/home"
-                  onClick={onSetSelectedLink}
-                  className={
-                    selectedLink.includes("home")
-                      ? "ListItemSelected"
-                      : "ListItem"
-                  }
-                >
-                  HOME
-                </Link>
-              </li>
-              <li key="services" id="services" onClick={onSetSelectedLink}>
-                <Link
-                  href="/services"
-                  to="/services"
-                  className={
-                    selectedLink.includes("services")
-                      ? "ListItemSelected"
-                      : "ListItem"
-                  }
-                >
-                  SERVICES
-                </Link>
-              </li>
-
-              <li key="gallery" id="gallery" onClick={onSetSelectedLink}>
-                <Link
-                  href="/gallery"
-                  to="/gallery"
-                  className={
-                    selectedLink.includes("gallery")
-                      ? "ListItemSelected"
-                      : "ListItem"
-                  }
-                >
-                  GALLERY
-                </Link>
-              </li>
-
-              <li key="contact" id="contact" onClick={onSetSelectedLink}>
-                <Link
-                  href="/contact"
-                  to="/contact"
-                  className={
-                    selectedLink.includes("contact")
-                      ? "ListItemSelected"
-                      : "ListItem"
-                  }
-                >
-                  CONTACT
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <span className="MenuHamburger" onClick={onClickShowMenu}>
-            <div className="Bar"></div>
-            <div className="Bar"></div>
-            <div className="Bar"></div>
-          </span>
-        </nav>
-        <div
-          className={
-            showMobileOption === true
-              ? "MenuMobileOptions"
-              : "MobileOptionsNotShow"
-          }
-        >
+      {/* <Router> */}
+      <nav className="NavBarContainer">
+        <Link to="/">
+          <img className="ImgNav" src={logo02} alt="" />
+        </Link>
+        <div className="MenuContainer">
+          <ul className="MenuMobileSelectedOption">
+            <li className="SelectedOption">{selectedMobileOption}</li>
+          </ul>
           <ul className="ListMenu">
             <li key="home" id="home" onClick={onSetSelectedLink}>
               <Link
                 href="/home"
                 to="/home"
                 onClick={onSetSelectedLink}
-                style={{ textDecoration: "none", color: "none" }}
                 className={
                   selectedLink.includes("home")
                     ? "ListItemSelected"
@@ -221,8 +145,78 @@ export const NavHeader = (props) => {
             </li>
           </ul>
         </div>
+        <span className="MenuHamburger" onClick={onClickShowMenu}>
+          <div className="Bar"></div>
+          <div className="Bar"></div>
+          <div className="Bar"></div>
+        </span>
+      </nav>
+      <div
+        className={
+          showMobileOption === true
+            ? "MenuMobileOptions"
+            : "MobileOptionsNotShow"
+        }
+      >
+        <ul className="ListMenu">
+          <li key="home" id="home" onClick={onSetSelectedLink}>
+            <Link
+              href="/home"
+              to="/home"
+              onClick={onSetSelectedLink}
+              style={{ textDecoration: "none", color: "none" }}
+              className={
+                selectedLink.includes("home") ? "ListItemSelected" : "ListItem"
+              }
+            >
+              HOME
+            </Link>
+          </li>
+          <li key="services" id="services" onClick={onSetSelectedLink}>
+            <Link
+              href="/services"
+              to="/services"
+              className={
+                selectedLink.includes("services")
+                  ? "ListItemSelected"
+                  : "ListItem"
+              }
+            >
+              SERVICES
+            </Link>
+          </li>
 
-        <Switch>
+          <li key="gallery" id="gallery" onClick={onSetSelectedLink}>
+            <Link
+              href="/gallery"
+              to="/gallery"
+              className={
+                selectedLink.includes("gallery")
+                  ? "ListItemSelected"
+                  : "ListItem"
+              }
+            >
+              GALLERY
+            </Link>
+          </li>
+
+          <li key="contact" id="contact" onClick={onSetSelectedLink}>
+            <Link
+              href="/contact"
+              to="/contact"
+              className={
+                selectedLink.includes("contact")
+                  ? "ListItemSelected"
+                  : "ListItem"
+              }
+            >
+              CONTACT
+            </Link>
+          </li>
+        </ul>
+      </div>
+
+      {/* <Switch>
           <Route exact path="/">
             <HomeScreenComponent />
           </Route>
@@ -238,8 +232,8 @@ export const NavHeader = (props) => {
           <Route path="/contact">
             <ContactScreenComponent />
           </Route>
-        </Switch>
-      </Router>
+        </Switch> */}
+      {/* </Router> */}
     </NavHeaderStyled>
   );
 };

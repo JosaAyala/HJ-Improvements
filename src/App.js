@@ -19,7 +19,6 @@ function App() {
         <MainScreenComponent />
         <Switch>
           <Route exact path="/" component={HomeScreenComponent} />
-          <Redirect to="/" />
           <Route exact path="/home" component={HomeScreenComponent} />
           <Route exact path="/services" component={ServicesScreenComponent} />
           <Route exact path="/gallery" component={GalleryScreenComponent} />
