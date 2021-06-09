@@ -92,7 +92,6 @@ export const NavHeader = (props) => {
               <Link
                 href="/home"
                 to="/home"
-                onClick={onSetSelectedLink}
                 className={
                   selectedLink.includes("home")
                     ? "ListItemSelected"
