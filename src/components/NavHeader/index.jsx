@@ -94,6 +94,7 @@ export const NavHeader = (props) => {
             <ul className="ListMenu">
               <li key="home" id="home" onClick={onSetSelectedLink}>
                 <Link
+                  href="/home"
                   to="/home"
                   onClick={onSetSelectedLink}
                   className={
@@ -107,6 +108,7 @@ export const NavHeader = (props) => {
               </li>
               <li key="services" id="services" onClick={onSetSelectedLink}>
                 <Link
+                  href="/services"
                   to="/services"
                   className={
                     selectedLink.includes("services")
@@ -120,6 +122,7 @@ export const NavHeader = (props) => {
 
               <li key="gallery" id="gallery" onClick={onSetSelectedLink}>
                 <Link
+                  href="/gallery"
                   to="/gallery"
                   className={
                     selectedLink.includes("gallery")
@@ -133,6 +136,7 @@ export const NavHeader = (props) => {
 
               <li key="contact" id="contact" onClick={onSetSelectedLink}>
                 <Link
+                  href="/contact"
                   to="/contact"
                   className={
                     selectedLink.includes("contact")
@@ -161,6 +165,7 @@ export const NavHeader = (props) => {
           <ul className="ListMenu">
             <li key="home" id="home" onClick={onSetSelectedLink}>
               <Link
+                href="/home"
                 to="/home"
                 onClick={onSetSelectedLink}
                 style={{ textDecoration: "none", color: "none" }}
@@ -175,6 +180,7 @@ export const NavHeader = (props) => {
             </li>
             <li key="services" id="services" onClick={onSetSelectedLink}>
               <Link
+                href="/services"
                 to="/services"
                 className={
                   selectedLink.includes("services")
@@ -188,6 +194,7 @@ export const NavHeader = (props) => {
 
             <li key="gallery" id="gallery" onClick={onSetSelectedLink}>
               <Link
+                href="/gallery"
                 to="/gallery"
                 className={
                   selectedLink.includes("gallery")
@@ -201,6 +208,7 @@ export const NavHeader = (props) => {
 
             <li key="contact" id="contact" onClick={onSetSelectedLink}>
               <Link
+                href="/contact"
                 to="/contact"
                 className={
                   selectedLink.includes("contact")
