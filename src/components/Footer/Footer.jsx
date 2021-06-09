@@ -122,6 +122,10 @@ export const FooterComponent = (props) => {
                     <IconLi />
                     <div className="">Windows</div>
                   </li>
+                  <li key="floor" className="ItemLi">
+                    <IconLi />
+                    <div className="">Cleaning</div>
+                  </li>
                 </ul>
               </div>
             </div>

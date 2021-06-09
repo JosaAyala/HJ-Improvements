@@ -1,9 +1,9 @@
 import React from "react";
 import { ServicesScreenStyled } from "./StyledServicesScreen";
-import AcoustingCeilling from "./../../assets/AcoustingCeilling.jpg";
+import AcoustingCeilling_1_1 from "./../../assets/AcoustingCeilling_1_1.jpg";
 import drywall2 from "./../../assets/drywall2.jpg";
-import Framing from "./../../assets/Framing.jpg";
-import PaintPic from "./../../assets/PaintPic.jpeg";
+import Framing1 from "./../../assets/Framing1.jpg";
+import Painting_1_4 from "./../../assets/Painting_1_4.jpeg";
 import floorPic from "./../../assets/floorPic.jpeg";
 import { CardService } from "./CardService";
 import { SubServiceCard } from "./SubServiceCard";
@@ -15,6 +15,7 @@ import {
   DOORS_PATH_ICON,
   FLOORING_PATH_ICON,
   WINDOWS_PATH_ICON,
+  CLEANING_PATH_ICON,
   BATHROOM_CONTENT,
   CARPENTRY_CONTENT,
   DOORS_CONTENT,
@@ -22,6 +23,7 @@ import {
   KITCHEN_CONTENT,
   PAINTING_CONTENT,
   WINDOW_CONTENT,
+  CLEANING_CONTENT,
 } from "./constants";
 
 export class ServicesScreenComponent extends React.Component {
@@ -32,15 +34,15 @@ export class ServicesScreenComponent extends React.Component {
         <div className="ServiceScreenContainer">
           <div className="ContainerItemsServices">
             <CardService
-              pictureValue={AcoustingCeilling}
+              pictureValue={AcoustingCeilling_1_1}
               serviceTitle="Acousting Ceiling"
             />
 
             <CardService pictureValue={drywall2} serviceTitle="Drywall" />
 
-            <CardService pictureValue={Framing} serviceTitle="Framing" />
+            <CardService pictureValue={Framing1} serviceTitle="Framing" />
 
-            <CardService pictureValue={PaintPic} serviceTitle="Painting" />
+            <CardService pictureValue={Painting_1_4} serviceTitle="Painting" />
 
             <CardService pictureValue={floorPic} serviceTitle="Floor" />
           </div>
@@ -86,6 +88,12 @@ export class ServicesScreenComponent extends React.Component {
               titleText="Windows"
               contentText={WINDOW_CONTENT}
               pathIcon={WINDOWS_PATH_ICON}
+              iconId="bi bi-shop-window"
+            />
+            <SubServiceCard
+              titleText="Cleaning"
+              contentText={CLEANING_CONTENT}
+              pathIcon={CLEANING_PATH_ICON}
               iconId="bi bi-shop-window"
             />
           </div>

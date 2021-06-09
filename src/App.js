@@ -1,12 +1,7 @@
 import "./App.css";
 import { FooterComponent } from "./components/Footer/Footer";
 import MainScreenComponent from "./components/MainScreen";
-import {
-  BrowserRouter as Router,
-  Redirect,
-  Route,
-  Switch,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import HomeScreenComponent from "./components/HomeScreen";
 import ContactScreenComponent from "./components/ContactScreen";
 import GalleryScreenComponent from "./components/GalleryScreen";
