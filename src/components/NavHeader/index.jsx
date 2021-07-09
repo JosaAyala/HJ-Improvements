@@ -214,25 +214,6 @@ export const NavHeader = (props) => {
           </li>
         </ul>
       </div>
-
-      {/* <Switch>
-          <Route exact path="/">
-            <HomeScreenComponent />
-          </Route>
-          <Route path="/home">
-            <HomeScreenComponent />
-          </Route>
-          <Route path="/services">
-            <ServicesScreenComponent />
-          </Route>
-          <Route path="/gallery">
-            <GalleryScreenComponent />
-          </Route>
-          <Route path="/contact">
-            <ContactScreenComponent />
-          </Route>
-        </Switch> */}
-      {/* </Router> */}
     </NavHeaderStyled>
   );
 };
